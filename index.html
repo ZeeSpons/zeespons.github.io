@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zeespons Keurmerk</title>
-    <style>
-      body {
-        font-family: Comic Sans MS, sans-serif;
-        background: linear-gradient(45deg, #b3ecff, #ffffff);
-        color: #004d66;
-        padding: 2rem;
-        max-width: 700px;
-        margin: auto;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeespons Keurmerk</title>
+  <style>
+    body {
+      font-family: Comic Sans MS, sans-serif;
+      background: linear-gradient(45deg, #b3ecff, #ffffff);
+      color: #004d66;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    .keurmerk {
+      font-size: 3rem;
+      font-weight: bold;
+      background: #ccffcc;
+      padding: 1rem;
+      border: 4px dashed green;
+      border-radius: 20px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .uitleg {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .voorbeeld {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 2px dotted #66ccff;
+      background-color: #e6faff;
+    }
+    .logo, .welkom {
+      display: block;
+      margin: 0 auto 1rem;
+      max-width: 100%;
+      height: auto;
+    }
+    .keuringslogo {
+      width: 50px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
 
-      .keurmerk {
-        font-size: 3rem;
-        font-weight: bold;
-        background: #ccffcc;
-        padding: 1rem;
-        border: 4px dashed green;
-        border-radius: 20px;
-        text-align: center;
-        margin-bottom: 2rem;
-      }
+  <!-- Site Logo -->
+  <img src="AI 1080x1080.png" alt="Zeespons Logo" class="logo" />
 
-      .uitleg {
-        font-size: 1.2rem;
-        line-height: 1.6;
-      }
+  <!-- Welkomstafbeelding -->
+  <img src="spons-wave.png" alt="Welkom Spons" class="welkom" />
 
-      .voorbeeld {
-        margin-top: 2rem;
-        padding: 1rem;
-        border: 2px dotted #66ccff;
-        background-color: #e6faff;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="keurmerk">
-      🧽 Zeespons Certified™
-    </div>
+  <div class="keurmerk">
+    🧽 Zeespons Certified™
+  </div>
 
-    <div class="uitleg">
-      Welkom op de <strong>volledig subjectieve</strong> homepage van het
-      <em>Zeespons Keurmerk</em>.  
-      <br><br>
-      Dit keurmerk betekent dat ik, de enige echte Zeespons, iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering, geen controle-instantie. Alleen mijn mening. En da’s genoeg.
-    </div>
+  <div class="uitleg">
+    Welkom op de <strong>volledig subjectieve</strong> homepage van het
+    <em>Zeespons Keurmerk</em>.  
+    <br><br>
+    Dit keurmerk betekent dat ik, de enige echte Zeespons, iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering, geen controle-instantie. Alleen mijn mening. En da’s genoeg.
+  </div>
 
+  <!-- Voorbeeld van goedgekeurd item -->
+  <div class="voorbeeld">
+    <img src="zeesponsgoedkeur.webp" alt="Goedgekeurd" class="keuringslogo" />
+    <strong>Goedgekeurd:</strong> Deze pizza kreeg het Zeespons Certified™ keurmerk omdat hij perfect krokant was en het weekend was begonnen.
+  </div>
 
-    <p style="margin-top: 3rem; text-align: center;">
-      ✨ Gemaakt met liefde, chaos, en mischien een beetje AI ✨
-    </p>
-  </body>
+  <!-- Voorbeeld van afgekeurd item -->
+  <div class="voorbeeld">
+    <img src="zeesponsafkeur.png" alt="Afgekeurd" class="keuringslogo" />
+    <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖ Geen keurmerk voor jou.
+  </div>
+
+  <p style="margin-top: 3rem; text-align: center;">
+    ✨ Gemaakt met liefde, chaos, en misschien een beetje AI ✨
+  </p>
+
+</body>
 </html>
