@@ -12,6 +12,8 @@
       padding: 2rem;
       max-width: 700px;
       margin: auto;
+      overflow-y: scroll;
+      height: 100vh;
     }
     .keurmerk {
       font-size: 3rem;
@@ -45,6 +47,28 @@
       vertical-align: middle;
       margin-right: 10px;
     }
+    /* Nieuwe styling voor de logo's */
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+    .welkom {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .welkom-text {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #004d66;
+      margin-top: 0.5rem;
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
@@ -52,11 +76,14 @@
   <!-- Site Logo -->
   <img src="AI 1080x1080.png" alt="Zeespons Logo" class="logo" />
 
-  <!-- Welkomstafbeelding -->
+  <!-- Welkomstafbeelding en tekst -->
+  <div class="welkom-text">
+    Welkom
+  </div>
   <img src="spons-wave.png" alt="Welkom Spons" class="welkom" />
 
   <div class="keurmerk">
-    🧽 Zeespons Certified™
+    <img src="AI 1080x1080.png" alt="Zeespons Logo" class="keuringslogo" /> Zeespons Certified™
   </div>
 
   <div class="uitleg">
@@ -77,6 +104,11 @@
     <img src="zeesponsafkeur.png" alt="Afgekeurd" class="keuringslogo" />
     <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖ Geen keurmerk voor jou.
   </div>
+
+  <!-- Disclaimer -->
+  <p class="disclaimer">
+    Disclaimer: Dit keurmerk is volledig gebaseerd op mijn persoonlijke mening en heeft geen externe validatie of normering.
+  </p>
 
   <p style="margin-top: 3rem; text-align: center;">
     ✨ Gemaakt met liefde, chaos, en misschien een beetje AI ✨
