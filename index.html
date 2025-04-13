@@ -9,11 +9,14 @@
       font-family: Comic Sans MS, sans-serif;
       background: linear-gradient(45deg, #b3ecff, #ffffff);
       color: #004d66;
-      padding: 2rem;
+      padding: 0;  /* Verwijder de padding om de lijn te elimineren */
+      margin: 0;  /* Zorg ervoor dat er geen ruimte aan de zijkanten is */
+      min-height: 100vh;  /* Zorg ervoor dat de achtergrond altijd de hele pagina vult */
+    }
+    .container {
       max-width: 700px;
-      margin: auto;
-      overflow-y: scroll;
-      height: 100vh;
+      margin: 0 auto;
+      padding: 2rem;
     }
     .keurmerk {
       font-size: 3rem;
@@ -50,7 +53,6 @@
       vertical-align: middle;
       margin-right: 10px;
     }
-    /* Nieuwe styling voor de logo's */
     .welkom {
       width: 80px;
       height: auto;
@@ -72,43 +74,45 @@
 </head>
 <body>
 
-  <!-- Welkomstafbeelding en tekst -->
-  <div class="welkom-text">
-    Welkom
+  <div class="container">
+    <!-- Welkomstafbeelding en tekst -->
+    <div class="welkom-text">
+      Welkom
+    </div>
+    <img src="spons-wave.png" alt="Welkom Spons" class="welkom" />
+
+    <div class="keurmerk">
+      <img src="AI 1080x1080.png" alt="Zeespons Logo" class="keuringslogo" /> Zeespons Certified™
+    </div>
+
+    <div class="uitleg">
+      Welkom op de <strong>volledig subjectieve</strong> homepage van het
+      <em>Zeespons Keurmerk</em>.  
+      <br><br>
+      Dit keurmerk betekent dat ik, de enige echte Zeespons, iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering, geen controle-instantie. Alleen mijn mening. En da’s genoeg.
+    </div>
+
+    <!-- Voorbeeld van goedgekeurd item -->
+    <div class="voorbeeld">
+      <img src="zeesponsgoedkeur.webp" alt="Goedgekeurd" class="keuringslogo" />
+      <strong>Goedgekeurd:</strong> Deze pizza kreeg het Zeespons Certified™ keurmerk omdat hij perfect krokant was en het weekend was begonnen.
+    </div>
+
+    <!-- Voorbeeld van afgekeurd item -->
+    <div class="voorbeeld">
+      <img src="zeesponsafkeur.png" alt="Afgekeurd" class="keuringslogo" />
+      <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖ Geen keurmerk voor jou.
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="disclaimer">
+      Disclaimer: Dit keurmerk is volledig gebaseerd op mijn persoonlijke mening en heeft geen externe validatie of normering.
+    </p>
+
+    <p style="margin-top: 3rem; text-align: center;">
+      ✨ Gemaakt met liefde, chaos, en misschien een beetje AI ✨
+    </p>
   </div>
-  <img src="spons-wave.png" alt="Welkom Spons" class="welkom" />
-
-  <div class="keurmerk">
-    <img src="AI 1080x1080.png" alt="Zeespons Logo" class="keuringslogo" /> Zeespons Certified™
-  </div>
-
-  <div class="uitleg">
-    Welkom op de <strong>volledig subjectieve</strong> homepage van het
-    <em>Zeespons Keurmerk</em>.  
-    <br><br>
-    Dit keurmerk betekent dat ik, de enige echte Zeespons, iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering, geen controle-instantie. Alleen mijn mening. En da’s genoeg.
-  </div>
-
-  <!-- Voorbeeld van goedgekeurd item -->
-  <div class="voorbeeld">
-    <img src="zeesponsgoedkeur.webp" alt="Goedgekeurd" class="keuringslogo" />
-    <strong>Goedgekeurd:</strong> Deze pizza kreeg het Zeespons Certified™ keurmerk omdat hij perfect krokant was en het weekend was begonnen.
-  </div>
-
-  <!-- Voorbeeld van afgekeurd item -->
-  <div class="voorbeeld">
-    <img src="zeesponsafkeur.png" alt="Afgekeurd" class="keuringslogo" />
-    <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖ Geen keurmerk voor jou.
-  </div>
-
-  <!-- Disclaimer -->
-  <p class="disclaimer">
-    Disclaimer: Dit keurmerk is volledig gebaseerd op mijn persoonlijke mening en heeft geen externe validatie of normering.
-  </p>
-
-  <p style="margin-top: 3rem; text-align: center;">
-    ✨ Gemaakt met liefde, chaos, en misschien een beetje AI ✨
-  </p>
 
 </body>
 </html>
