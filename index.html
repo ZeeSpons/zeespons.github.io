@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="nl">
+<!DOCTYPE html><html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zeespons Keurmerk</title>
-
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <style>
-    html, body {
-      overflow-x: hidden;
-    }
-
+  <title>Zeespons Keurmerk</title>  <link rel="icon" type="image/png" href="favicon.png" />  <style>
     body {
       font-family: Comic Sans MS, sans-serif;
       background: linear-gradient(135deg, #e3e8ff, #ffffff);
@@ -105,44 +96,55 @@
       }
     }
 
-    /* Zijmenu-stijlen */
     .menu-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: #fff176;
-      border: 2px solid #ffcc80;
-      color: #2b3a67;
-      padding: 10px 15px;
-      border-radius: 8px;
+      width: 35px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       cursor: pointer;
-      font-weight: bold;
-      z-index: 999;
-      transition: background 0.3s;
+      z-index: 1000;
     }
 
-    .menu-toggle:hover::after {
-      content: " menu";
+    .menu-toggle .bar {
+      height: 4px;
+      width: 100%;
+      background-color: #2b3a67;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle.open .bar:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
     }
 
     .sidebar {
       position: fixed;
       top: 0;
-      right: 0;
+      right: -260px;
       width: 250px;
       height: 100%;
       background: #fff9c4;
       border-left: 3px solid #ffcc80;
       box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
+      transition: right 0.3s ease;
       padding: 2rem 1rem;
-      z-index: 998;
-      box-sizing: border-box;
+      z-index: 999;
     }
 
     .sidebar.open {
-      transform: translateX(0);
+      right: 0;
     }
 
     .sidebar a {
@@ -156,62 +158,57 @@
     .sidebar a:hover {
       text-decoration: underline;
     }
-  </style>
-</head>
-<body>
-
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-  <div class="sidebar" id="sidebar">
-    <a href="index.html">Home</a>
+  </style></head>
+<body>  <div class="menu-toggle" onclick="toggleMenu()" id="menu-toggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>  <div class="sidebar" id="sidebar">
+    <a href="index.html">Home (tablet test)</a>
     <a href="gereviewed.html">Gereviewde items</a>
     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAACfMwgdUMU5YWFA2S1hZVkRDSkNaRTVQWlZGN1ZBUS4u" target="_blank">Review aanvragen</a>
-  </div>
-
-  <div class="container">
+  </div>  <div class="container">
     <div class="welkom-text">Welkom</div>
-    <img src="spons-wave.png" alt="Zwaaiende spons heet je welkom" class="welkom" />
+    <img src="spons-wave.png" alt="Zwaaiende spons heet je welkom" class="welkom" /><div class="keurmerk">
+  <img src="AI 1080x1080.png" alt="Zeespons Keurmerk Logo" class="keuringslogo" />
+  Zeespons Certified™
+</div>
 
-    <div class="keurmerk">
-      <img src="AI 1080x1080.png" alt="Zeespons Keurmerk Logo" class="keuringslogo" />
-      Zeespons Certified™
-    </div>
+<div class="uitleg">
+  Welkom op de <strong>volledig subjectieve</strong> homepage van het
+  <em>Zeespons Keurmerk</em>.
+  <br><br>
+  Dit keurmerk betekent dat ik, de enige echte Zeespons, iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering, geen controle-instantie. Alleen mijn mening. En da’s genoeg.
+</div>
 
-    <div class="uitleg">
-      Welkom op de <strong>volledig subjectieve</strong> homepage van het
-      <em>Zeespons Keurmerk</em>.
-      <br><br>
-      Dit keurmerk betekent dat ik, de enige echte Zeespons, iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering, geen controle-instantie. Alleen mijn mening. En da’s genoeg.
-    </div>
+<div class="voorbeeld">
+  <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo" class="keuringslogo" />
+  <strong>Goedgekeurd:</strong> Deze pizza kreeg het Zeespons Certified™ keurmerk omdat hij perfect krokant was en het weekend was begonnen.
+</div>
 
-    <div class="voorbeeld">
-      <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo" class="keuringslogo" />
-      <strong>Goedgekeurd:</strong> Deze pizza kreeg het Zeespons Certified™ keurmerk omdat hij perfect krokant was en het weekend was begonnen.
-    </div>
+<div class="voorbeeld">
+  <img src="zeesponsafkeur.png" alt="Zeespons afkeur-logo" class="keuringslogo" />
+  <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖ Geen keurmerk voor jou.
+</div>
 
-    <div class="voorbeeld">
-      <img src="zeesponsafkeur.png" alt="Zeespons afkeur-logo" class="keuringslogo" />
-      <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖ Geen keurmerk voor jou.
-    </div>
+<p class="disclaimer">
+  Disclaimer: Dit keurmerk is volledig gebaseerd op mijn persoonlijke mening en heeft geen externe validatie of normering.
+</p>
 
-    <p class="disclaimer">
-      Disclaimer: Dit keurmerk is volledig gebaseerd op mijn persoonlijke mening en heeft geen externe validatie of normering.
-    </p>
+<p style="margin-top: 3rem; text-align: center;">
+  ✨ Gemaakt met liefde, chaos, en misschien een beetje AI ✨
+</p>
 
-    <p style="margin-top: 3rem; text-align: center;">
-      ✨ Gemaakt met liefde, chaos, en misschien een beetje AI ✨
-    </p>
+<p class="copyright">
+  © 2025 Zeespons. Alle rechten voorbehouden.
+</p>
 
-    <p class="copyright">
-      © 2025 Zeespons. Alle rechten voorbehouden.
-    </p>
-  </div>
-
-  <script>
+  </div>  <script>
     function toggleMenu() {
       const sidebar = document.getElementById("sidebar");
+      const toggle = document.getElementById("menu-toggle");
       sidebar.classList.toggle("open");
+      toggle.classList.toggle("open");
     }
-  </script>
-</body>
+  </script></body>
 </html>
