@@ -3,22 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gereviewde items - Zeespons Keurmerk</title>
-
+  <title>Gereviewde Items - Zeespons Keurmerk</title>
   <link rel="icon" type="image/png" href="favicon.png" />
-
   <style>
-    html, body {
-      overflow-x: hidden;
-    }
-
     body {
       font-family: Comic Sans MS, sans-serif;
       background: linear-gradient(135deg, #e3e8ff, #ffffff);
       color: #2b3a67;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
     }
 
     .container {
@@ -27,42 +20,26 @@
       padding: 2rem;
     }
 
-    h1 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
     .review-blok {
-      background: #fff9c4;
       border: 2px solid #ffcc80;
+      background-color: #fff9c4;
       border-radius: 15px;
       padding: 1rem;
       margin-bottom: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
     }
 
     .review-blok img {
-      width: 80px;
+      width: 50px;
       height: auto;
-      margin-bottom: 0.5rem;
+      vertical-align: middle;
+      margin-right: 10px;
     }
 
-    .review-titel {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
+    .review-blok h3 {
+      margin: 0 0 0.5rem;
     }
 
-    .review-tekst {
-      font-size: 1rem;
-      color: #2b3a67;
-    }
-
-    /* Zijmenu-stijlen */
+    /* Menu + sidebar */
     .menu-toggle {
       position: fixed;
       top: 20px;
@@ -74,8 +51,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      z-index: 999;
-      transition: background 0.3s;
+      z-index: 1001;
     }
 
     .menu-toggle:hover::after {
@@ -94,8 +70,7 @@
       transform: translateX(100%);
       transition: transform 0.3s ease;
       padding: 2rem 1rem;
-      z-index: 998;
-      box-sizing: border-box;
+      z-index: 1000;
     }
 
     .sidebar.open {
@@ -113,6 +88,20 @@
     .sidebar a:hover {
       text-decoration: underline;
     }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #2b3a67;
+      font-weight: bold;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -120,6 +109,7 @@
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
   <div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="toggleMenu()">×</div>
     <a href="index.html">Home</a>
     <a href="gereviewed.html">Gereviewde items</a>
     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAACfMwgdUMU5YWFA2S1hZVkRDSkNaRTVQWlZGN1ZBUS4u" target="_blank">Review aanvragen</a>
@@ -129,15 +119,10 @@
     <h1>Gereviewde items</h1>
 
     <div class="review-blok">
-      <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo">
-      <div class="review-titel"><a href="https://boeitmijnul.nl" target="_blank">boeitmijnul.nl</a></div>
-      <div class="review-tekst">
-        Een webproject dat niks boeit, maar toch opvalt. Simpel, sterk, Zeesponswaardig. Certified!
-      </div>
+      <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo" />
+      <h3><a href="https://boeitmijnul.nl" target="_blank">boeitmijnul.nl</a></h3>
+      <p>Een chaotisch doch charmant domein met potentie. Verdient zeker het Zeespons Certified™ keurmerk!</p>
     </div>
-
-    <!-- Voeg hier meer reviews toe als je wilt -->
-
   </div>
 
   <script>
