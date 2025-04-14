@@ -124,19 +124,19 @@
     .sidebar {
       position: fixed;
       top: 0;
-      right: -250px;
+      right: -250px; /* Menu is verborgen */
       width: 250px;
       height: 100%;
       background: #fff9c4;
       border-left: 3px solid #ffcc80;
       box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-      transition: right 0.3s ease;
+      transition: right 0.3s ease; /* Animatie voor het openen */
       padding: 2rem 1rem;
       z-index: 998;
     }
 
     .sidebar.open {
-      right: 0;
+      right: 0; /* Menu verschijnt wanneer de klasse 'open' is toegevoegd */
     }
 
     .sidebar a {
@@ -150,12 +150,15 @@
     .sidebar a:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
 
+  <!-- Menuknop -->
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
+  <!-- Zijmenu -->
   <div class="sidebar" id="sidebar">
     <a href="gereviewed.html">Gereviewde items</a>
     <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAACfMwgdUMU5YWFA2S1hZVkRDSkNaRTVQWlZGN1ZBUS4u" target="_blank">Review aanvragen</a>
@@ -201,6 +204,7 @@
   </div>
 
   <script>
+    // Functie om het menu in te schakelen of uit te schakelen
     function toggleMenu() {
       const sidebar = document.getElementById("sidebar");
       sidebar.classList.toggle("open");
