@@ -7,6 +7,19 @@ Deze website bevat het **Zeespons Keurmerk** en aanverwante pagina’s, met een 
 
 ## 📁 Bestandsstructuur
 
+/
+├── index.html → Hoofdpagina van het Zeespons Keurmerk
+├── gereviewed.html → Pagina voor beoordeelde of goedgekeurde content
+├── 404.html → Custom 404-pagina met Zeespons-saus
+├── favicon.png → Favicon voor de website
+├── og.png → Open Graph-afbeelding voor social media
+├── zeeSHRUG.jpg → Meme / afbeelding gebruikt op site
+├── zeesponsgoedkeur.webp → Het officiële Zeespons Keurmerk
+├── zeesponsafkeur.png → Het officiële Zeespons Afkeurmerk
+├── spons-wave.png → Decoratief element
+├── sitemap.xml → Sitemap voor zoekmachines
+├── robots.txt → Crawlingregels (assets uitgesloten)
+└── CNAME → Domeinverwijzing (zeespons.com)
 
 ---
 
