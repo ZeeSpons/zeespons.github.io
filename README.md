@@ -1,6 +1,6 @@
 # 🧽 Zeespons Keurmerk
 
-Welkom bij de officiële GitHub Pages repository van **[Zee Spons](https://zeespons.com)**.  
+Welkom bij de officiële GitHub Pages repository van **[Zee Spons](https://www.zeespons.com)**.  
 Deze website bevat het **Zeespons Keurmerk** en aanverwante pagina’s, met een mix van humor, stijl en keurige chaos.
 
 ---
@@ -13,7 +13,7 @@ Deze website bevat het **Zeespons Keurmerk** en aanverwante pagina’s, met een 
 ## 🧩 Functies en kenmerken
 
 - ✅ **Open Graph & Twitter Cards**: pagina’s tonen nette previews op sociale media.  
-- 🌐 **Aangepaste domeinverwijzing** via `CNAME` → [zeespons.com](https://zeespons.com).  
+- 🌐 **Aangepaste domeinverwijzing** via `CNAME` → [zeespons.com](https://www.zeespons.com).  
 - 🧠 **Zeespons Keurmerk** – een stempel van (on)goedgekeurde absurditeit.  
 - ⚙️ **SEO-bestanden** zoals `robots.txt` en `sitemap.xml` zijn handmatig afgestemd.
 
@@ -29,7 +29,7 @@ want als Zee Spons het goedkeurt, dan zit het... nou ja, waarschijnlijk *redelij
 
 ## 🧑‍💻 Ontwikkeling
 
-Website gemaakt en onderhouden door **[Zee Spons](https://zeespons.com)**.  
+Website gemaakt en onderhouden door **[Zee Spons](https://www.zeespons.com)**.  
 Host: **GitHub Pages**
 
 ---
