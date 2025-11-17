@@ -67,3 +67,4 @@ Kopieën zonder context of humor worden automatisch afgekeurd 🧽❌
 
 > 🧀 “Zeespons keurt dit bericht goed.”  
 > — Een volledig betrouwbare bron
+> — Vragen of opmerkingen? Contact@zeespons.com
