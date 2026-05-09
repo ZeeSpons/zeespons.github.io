@@ -1,250 +1,163 @@
+/* ============================================================
+   ZEESPONS CERTIFIED - STYLING
+   ============================================================ */
+:root {
+  --sponge-yellow: #feca57;
+  --ocean-blue: #2e86de;
+  --deep-ocean: #222f3e;
+  --bg-light: #f0f9ff;
+  --text-color: #2d3436;
+}
 
- body {
-      font-family: Comic Sans MS, sans-serif;
-      background: linear-gradient(135deg, #e3e8ff, #ffffff);
-      color: #2b3a67;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-    }
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: var(--bg-light);
+  background-image: radial-gradient(circle at 20% 20%, #e0f2fe 0%, transparent 40%),
+                    radial-gradient(circle at 80% 80%, #dbeafe 0%, transparent 40%);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
 
-    .container {
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
 
-    .keurmerk {
-      font-size: 3rem;
-      font-weight: bold;
-      background: #fff176;
-      padding: 1rem;
-      border: 4px solid #ffcc80;
-      border-radius: 20px;
-      text-align: center;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #2b3a67;
-    }
+/* --- HEADER & WELKOM --- */
+.welkom-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--ocean-blue);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
 
-    .uitleg {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      background-color: #ffffffc5;
-      padding: 1rem;
-      border-radius: 12px;
-    }
+img.welkom {
+  width: 100px !important;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
 
-    .voorbeeld {
-      margin-top: 2rem;
-      padding: 1rem;
-      border: 2px solid #ffcc80;
-      background-color: #fff9c4;
-      border-radius: 15px;
-    }
+/* --- HET KEURMERK LOGO --- */
+.keurmerk {
+  background: var(--sponge-yellow);
+  padding: 1.5rem;
+  border-radius: 30px;
+  border: 6px solid white;
+  box-shadow: 0 10px 30px rgba(254, 202, 87, 0.3);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  transform: rotate(-1deg);
+}
 
-    .keuringslogo {
-      width: 50px;
-      height: auto;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
+.keurmerk img {
+  width: 120px !important;
+  height: auto;
+}
 
-    .logo, .welkom {
-      display: block;
-      margin: 0 auto 1rem;
-      max-width: 100%;
-      height: auto;
-    }
+/* --- BLOKKEN (Uitleg & Reviews) --- */
+.uitleg, .review-blok, .voorbeeld {
+  background: white;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+  margin-bottom: 2rem;
+  text-align: left;
+  border: 1px solid #eef2f7;
+  transition: transform 0.3s ease;
+}
 
-    .welkom {
-      width: 80px;
-      margin-bottom: 1rem;
-    }
+.review-blok:hover {
+  transform: translateY(-5px);
+  border-color: var(--ocean-blue);
+}
 
-    .welkom-text {
-      text-align: center;
-      font-size: 1.5rem;
-      color: #2b3a67;
-      margin-top: 0.5rem;
-    }
+.review-blok img, .voorbeeld img {
+  width: 50px !important;
+  height: auto !important;
+  vertical-align: middle;
+  margin-right: 15px;
+}
 
-    .disclaimer, .copyright {
-      font-size: 0.8rem;
-      color: #555;
-      text-align: center;
-      margin-top: 2rem;
-    }
+.review-blok h3 {
+  margin-top: 0;
+  display: inline-block;
+}
 
-    @media (max-width: 500px) {
-      .keuringslogo {
-        width: 35px;
-      }
-    }
+.review-blok h3 a {
+  color: var(--ocean-blue);
+  text-decoration: none;
+}
 
-    .menu-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #fff176;
-      border: 2px solid #ffcc80;
-      color: #2b3a67;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 1001;
-    }
+/* --- SIDEBAR & MENU --- */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--ocean-blue);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1001;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(46, 134, 222, 0.3);
+}
 
-    .menu-toggle:hover::after {
-      content: " menu";
-    }
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: var(--deep-ocean);
+  color: white;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  padding: 5rem 2rem;
+  z-index: 1000;
+  box-sizing: border-box;
+}
 
-    .sidebar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 250px;
-      height: 100%;
-      background: #fff9c4;
-      border-left: 3px solid #ffcc80;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      padding: 2rem 1rem;
-      z-index: 1000;
-    }
+.sidebar.open { transform: translateX(0); }
 
-    .sidebar.open {
-      transform: translateX(0);
-    }
+.sidebar a {
+  color: var(--sponge-yellow);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1.5rem;
+}
 
-    .sidebar a {
-      display: block;
-      margin: 1rem 0;
-      text-decoration: none;
-      color: #2b3a67;
-      font-weight: bold;
-    }
+.sidebar a:hover { color: white; }
 
-    .sidebar a:hover {
-      text-decoration: underline;
-    }
+.close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
 
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #2b3a67;
-      font-weight: bold;
-    }
+/* --- FOOTER --- */
+.disclaimer, .copyright {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-top: 2rem;
+  text-align: center;
+}
 
-    .close-btn:hover {
-      color: red;
-    }
-
-html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Comic Sans MS, sans-serif;
-      background: linear-gradient(135deg, #e3e8ff, #ffffff);
-      color: #2b3a67;
-    }
-
-    body {
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .review-blok {
-      border: 2px solid #ffcc80;
-      background-color: #fff9c4;
-      border-radius: 15px;
-      padding: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .review-blok img {
-      width: 50px;
-      height: auto;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-
-    .review-blok h3 {
-      margin: 0 0 0.5rem;
-    }
-
-    /* Menu + sidebar */
-    .menu-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #fff176;
-      border: 2px solid #ffcc80;
-      color: #2b3a67;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 1001;
-    }
-
-    .menu-toggle:hover::after {
-      content: " menu";
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 250px;
-      height: 100%;
-      background: #fff9c4;
-      border-left: 3px solid #ffcc80;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      padding: 2rem 1rem;
-      z-index: 1000;
-    }
-
-    .sidebar.open {
-      transform: translateX(0);
-    }
-
-    .sidebar a {
-      display: block;
-      margin: 1rem 0;
-      text-decoration: none;
-      color: #2b3a67;
-      font-weight: bold;
-    }
-
-    .sidebar a:hover {
-      text-decoration: underline;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #2b3a67;
-      font-weight: bold;
-    }
-
-    .close-btn:hover {
-      color: red;
-    }
+@media (max-width: 600px) {
+  .keurmerk { transform: none; }
+  .container { padding-top: 5rem; }
+}
