@@ -19,68 +19,54 @@
 </head>
 <body>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰ MENU</div>
 
-  <div class="sidebar" id="sidebar">
+  <nav class="sidebar" id="sidebar">
     <div class="close-btn" onclick="toggleMenu()">×</div>
-    <a href="index">Home</a>
-    <a href="gereviewed">Gereviewde items</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvSWNn--T0oqvGbJd_f2MkCk5mrD19noMeUFiprWZpmwtXxA/viewform?usp=header" target="_blank">
-      Review aanvragen en ideeën delen
-    </a>
-    <hr style="border: 1px solid #ffcc80; margin: 1.5rem 0;">
-    <div style="margin-top: 1rem;">
+    <a href="index">🏠 Home</a>
+    <a href="gereviewed">✨ Gereviewde items</a>
+    <a href="https://google.com..." target="_blank">📝 Review aanvragen</a>
+    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0;">
+    <div style="font-size: 0.9rem;">
       <strong>Contact ✉️</strong><br>
-      <a href="mailto:contact@zeespons.com" style="color:#2b3a67; text-decoration:none; font-weight:normal;">
-        Contact@zeespons.com
-      </a>
+      contact@zeespons.com
     </div>
-  </div>
-
+  </nav>
 
   <div class="container">
-    <div class="welkom-text">Welkom</div>
-    <img src="spons-wave.png" alt="Zwaaiende spons heet je welkom" class="welkom" />
+    <header style="text-align: center;">
+      <div class="welkom-text">Welkom</div>
+      <img src="spons-wave.png" alt="Zwaaiende spons" class="welkom" />
+    </header>
 
     <div class="keurmerk">
-      <img src="AI 1080x1080.png" alt="Zeespons Keurmerk Logo" class="keuringslogo" />
-      Zeespons Certified™
+      <img src="AI 1080x1080.png" alt="Logo" />
+      <span>Zeespons Certified™</span>
     </div>
 
     <div class="uitleg">
-      Welkom op de <strong>volledig subjectieve</strong> homepage van het
-      <em>Zeespons Keurmerk</em>.
+      Welkom op de <strong>volledig subjectieve</strong> homepage van het <em>Zeespons Keurmerk</em>.
       <br><br>
-      Dit keurmerk betekent dat ik, de enige echte Zeespons, iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering, geen controle-instantie. Alleen mijn mening. En da’s genoeg.
+      Dit keurmerk betekent dat ik iets leuk, goed of willekeurig fantastisch vond. Er is geen comité, geen normering. Alleen mijn mening. En da’s genoeg.
     </div>
 
     <div class="voorbeeld">
-      <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo" class="keuringslogo" />
-      <strong>Goedgekeurd:</strong> Deze pizza kreeg het Zeespons Certified™ keurmerk omdat hij perfect krokant was en het weekend was begonnen.
+      <img src="zeesponsgoedkeur.webp" alt="Check" />
+      <strong>Goedgekeurd:</strong> Deze pizza kreeg het keurmerk omdat hij perfect krokant was.
     </div>
 
-    <div class="voorbeeld">
-      <img src="zeesponsafkeur.png" alt="Zeespons afkeur-logo" class="keuringslogo" />
-      <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖ Geen keurmerk voor jou.
+    <div class="voorbeeld" style="border-left: 5px solid #ff7675;">
+      <img src="zeesponsafkeur.png" alt="Cross" />
+      <strong>Afgekeurd:</strong> Deze pen viel drie keer op de grond zonder reden. ✖
     </div>
 
-    <p class="disclaimer">
-      Disclaimer: Dit keurmerk is volledig gebaseerd op mijn persoonlijke mening en heeft geen externe validatie of normering.
-    </p>
-
-    <p style="margin-top: 3rem; text-align: center;">
-      ✨ Gemaakt met liefde, chaos, en misschien een beetje AI ✨
-    </p>
-
-    <p class="copyright">
-      © 2025 Zeespons. Alle rechten voorbehouden.
-    </p>
+    <p class="disclaimer">Disclaimer: Dit keurmerk is 100% gebaseerd op een persoonlijke mening.</p>
+    <p class="copyright">© 2025 Zeespons. Alle rechten voorbehouden.</p>
   </div>
 
   <script>
     function toggleMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("open");
+      document.getElementById("sidebar").classList.toggle("open");
     }
   </script>
 </body>
