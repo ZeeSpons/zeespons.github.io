@@ -18,54 +18,44 @@
 </head>
 <body>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰ MENU</div>
 
-  <div class="sidebar" id="sidebar">
+  <nav class="sidebar" id="sidebar">
     <div class="close-btn" onclick="toggleMenu()">×</div>
-    <a href="index">Home</a>
-    <a href="gereviewed">Gereviewde items</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvSWNn--T0oqvGbJd_f2MkCk5mrD19noMeUFiprWZpmwtXxA/viewform?usp=header" target="_blank">
-      Review aanvragen en ideeën delen
-    </a>
-    <hr style="border: 1px solid #ffcc80; margin: 1.5rem 0;">
-    <div style="margin-top: 1rem;">
-      <strong>Contact ✉️</strong><br>
-      <a href="mailto:contact@zeespons.com" style="color:#2b3a67; text-decoration:none; font-weight:normal;">
-        Contact@zeespons.com
-      </a>
-    </div>
-  </div>
-
+    <a href="index">🏠 Home</a>
+    <a href="gereviewed">✨ Gereviewde items</a>
+    <a href="https://google.com..." target="_blank">📝 Review aanvragen</a>
+  </nav>
 
   <div class="container">
-    <h1>Gereviewde items</h1>
+    <h1 style="text-align: center; color: var(--ocean-blue); margin-bottom: 3rem;">Gereviewde items</h1>
 
     <div class="review-blok">
-      <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo" />
+      <img src="zeesponsgoedkeur.webp" alt="Goedkeur" />
       <h3><a href="https://boeitmijnul.nl" target="_blank">boeitmijnul.nl</a></h3>
       <p>Een chaotisch doch charmant domein met potentie. Verdient zeker het Zeespons Certified™ keurmerk!</p>
     </div>
 
-    <!-- 🔽 NIEUW BLOK VOOR yappelkaas.nl -->
     <div class="review-blok">
-      <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo" />
+      <img src="zeesponsgoedkeur.webp" alt="Goedkeur" />
       <h3><a href="https://yappelkaas.nl" target="_blank">yappelkaas.nl</a></h3>
       <p>Een vrolijk webhoekje vol karakter, chaos en kaas. Krijgt zonder twijfel het Zeespons Certified™ keurmerk. 🧀✨</p>
     </div>
     
- <!-- 🔽 NIEUW BLOK VOOR SpongeBob -->
     <div class="review-blok">
-      <img src="zeesponsgoedkeur.webp" alt="Zeespons goedkeur-logo" />
-      <h3>Spongebob Squarepants</h3>
-      <p>Een Geweldige zeespons! Hij is zoizo een 10/10 en verdient het Zeespons Certified™ keurmerk!</p>
+      <img src="zeesponsgoedkeur.webp" alt="Goedkeur" />
+      <h3>SpongeBob SquarePants</h3>
+      <p>Een geweldige zeespons! Hij is sowieso een 10/10 en verdient het Zeespons Certified™ keurmerk!</p>
     </div>
-    
+
+    <footer style="margin-top: 5rem;">
+      <p class="copyright">© 2025 Zeespons. <br> ✨ Gemaakt met liefde en chaos ✨</p>
+    </footer>
   </div>
 
   <script>
     function toggleMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("open");
+      document.getElementById("sidebar").classList.toggle("open");
     }
   </script>
 </body>
