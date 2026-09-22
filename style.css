@@ -1,32 +1,43 @@
-/* Basis styling en Header */
-body {
-    background-color: #0f1115; /* High-end Dark mode */
-    color: #e2e8f0;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 20px;
+/* ==========================================================================
+   1. ALGEMENE INSTELLINGEN & KLEUREN (Gepast bij je gele logo)
+   ========================================================================== */
+:root {
+    --bg-main: #0f1115;          /* Diepe, luxe donkere achtergrond */
+    --bg-card: #181b22;          /* Iets lichtere kleur voor de bento-blokken */
+    --bg-card-hover: #1f232c;    /* Kleur van de blokken als je eroverheen hoovert */
+    --border-color: #262b36;     /* Subtiele, strakke randen rondom elementen */
+    --text-main: #f1f5f9;        /* Helder wit/grijs voor hoofdteksten */
+    --text-muted: #94a3b8;       /* Zacht grijs voor minder belangrijke teksten */
+    --accent-yellow: #f4c430;    /* Het sprekende geel uit jouw zeespons-logo */
+    --accent-brown: #5d4037;     /* De warme bruine tint van je tekst/lijnen */
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 24px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATIE (Uit jouw schets)
+   ========================================================================== */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: #1a1d24;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    border: 1px solid #2a2f3a;
-}
-
-.site-title {
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.header-logo {
-    height: 40px; /* Zorgt dat het logo strak en compact in de balk past */
-    width: auto;
-    display: block;
+    padding: 16px 32px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    margin-bottom: 32px;
 }
 
 .logo-container {
@@ -34,46 +45,152 @@ body {
     align-items: center;
 }
 
-
-/* Het magische Bento Grid */
-.bento-container {
-    display: grid;
-    /* We verdelen de pagina in 3 gelijke onzichtbare kolommen */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; /* De witruimte tussen de blokken */
+.header-logo {
+    height: 42px; /* Perfecte compacte grootte voor in de balk */
+    width: auto;
+    display: block;
 }
 
-/* Algemene styling voor elk blokje */
-.bento-box {
-    background-color: #1a1d24;
-    border: 1px solid #2a2f3a;
-    border-radius: 16px; /* Subtiel afgeronde hoeken uit je schets */
-    padding: 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.site-title {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--text-main);
 }
 
-/* Specifieke breedtes om de asymmetrie van je tekening na te maken */
-.box-small {
-    grid-column: span 1;
-}
-
-.box-medium {
-    grid-column: span 1;
-}
-
-.box-wide {
-    /* Dit blok neemt 2 van de 3 kolommen in beslag */
-    grid-column: span 2; 
+.nav-menu {
     display: flex;
     gap: 20px;
-    align-items: center;
 }
 
-/* Foto vakje binnen het brede blok */
-.foto-placeholder {
-    background: #2a2f3a;
-    padding: 20px;
+.nav-menu a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    padding: 6px 12px;
     border-radius: 8px;
-    min-width: 80px;
-    text-align: center;
+}
+
+/* Hover-effect voor de menulinks */
+.nav-menu a:hover {
+    color: var(--accent-yellow);
+}
+
+/* Styling voor de actieve pagina (Grid) */
+.nav-menu a.active {
+    color: var(--bg-main);
+    background-color: var(--accent-yellow);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. HET BENTO GRID (De asymmetrische blokkenstructuur)
+   ========================================================================== */
+.bento-container {
+    display: grid;
+    /* Verdeelt de layout in exact 3 gelijke onzichtbare kolommen */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px; /* De witruimte tussen je blokken */
+    max-width: 1200px;
+    margin: 0 auto; /* Centreert het grid netjes op grote schermen */
+}
+
+/* Algemene styling voor elk afzonderlijk blok */
+.bento-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px; /* Mooie, modern afgeronde hoeken uit je schets */
+    padding: 32px;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Subtiel premium effect als je met de muis over een blok beweegt */
+.bento-box:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--accent-yellow);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. BREEDTES EN FUNCTIONALITEIT VAN DE SPECIFIEKE BLOKKEN
+   ========================================================================== */
+
+/* Kleine blokken (nemen 1 van de 3 kolommen in) */
+.box-small, .box-small-text, .box-medium {
+    grid-column: span 1;
+}
+
+/* Brede blokken uit je schets (nemen 2 van de 3 kolommen in) */
+.box-wide {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* De foto-placeholder binnen het brede blok */
+.foto-placeholder {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    min-width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Styling voor de emoticons/iconen bovenin de blokjes */
+.icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.bento-box p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   5. RESPONSIVENESS (Zorgt dat het grid perfect werkt op mobiel)
+   ========================================================================== */
+@media (max-width: 900px) {
+    body {
+        padding: 16px;
+    }
+
+    /* Schakelt de 3 kolommen uit en zet alles netjes onder elkaar */
+    .bento-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Reset alle brede blokken zodat ze op mobiel gewoon de volle breedte pakken */
+    .box-wide, .box-small, .box-small-text, .box-medium {
+        grid-column: span 1;
+    }
+
+    /* Past het brede blok aan zodat de foto op mobiel bóven de tekst staat */
+    .box-wide {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .foto-placeholder {
+        width: 100%;
+        height: 140px;
+    }
+
+    /* Verandert de header-indeling op kleine schermen */
+    .main-header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        text-align: center;
+    }
 }
