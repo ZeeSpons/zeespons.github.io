@@ -1,163 +1,67 @@
-/* ============================================================
-   ZEESPONS CERTIFIED - STYLING
-   ============================================================ */
-:root {
-  --sponge-yellow: #feca57;
-  --ocean-blue: #2e86de;
-  --deep-ocean: #222f3e;
-  --bg-light: #f0f9ff;
-  --text-color: #2d3436;
-}
-
+/* Basis styling en Header */
 body {
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
-  background-color: var(--bg-light);
-  background-image: radial-gradient(circle at 20% 20%, #e0f2fe 0%, transparent 40%),
-                    radial-gradient(circle at 80% 80%, #dbeafe 0%, transparent 40%);
-  color: var(--text-color);
-  line-height: 1.6;
-  min-height: 100vh;
+    background-color: #0f1115; /* High-end Dark mode */
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1a1d24;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #2a2f3a;
 }
 
-/* --- HEADER & WELKOM --- */
-.welkom-text {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--ocean-blue);
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+.site-title {
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-img.welkom {
-  width: 100px !important;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+/* Het magische Bento Grid */
+.bento-container {
+    display: grid;
+    /* We verdelen de pagina in 3 gelijke onzichtbare kolommen */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* De witruimte tussen de blokken */
 }
 
-/* --- HET KEURMERK LOGO --- */
-.keurmerk {
-  background: var(--sponge-yellow);
-  padding: 1.5rem;
-  border-radius: 30px;
-  border: 6px solid white;
-  box-shadow: 0 10px 30px rgba(254, 202, 87, 0.3);
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-  font-weight: 900;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  transform: rotate(-1deg);
+/* Algemene styling voor elk blokje */
+.bento-box {
+    background-color: #1a1d24;
+    border: 1px solid #2a2f3a;
+    border-radius: 16px; /* Subtiel afgeronde hoeken uit je schets */
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.keurmerk img {
-  width: 120px !important;
-  height: auto;
+/* Specifieke breedtes om de asymmetrie van je tekening na te maken */
+.box-small {
+    grid-column: span 1;
 }
 
-/* --- BLOKKEN (Uitleg & Reviews) --- */
-.uitleg, .review-blok, .voorbeeld {
-  background: white;
-  padding: 2rem;
-  border-radius: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-  margin-bottom: 2rem;
-  text-align: left;
-  border: 1px solid #eef2f7;
-  transition: transform 0.3s ease;
+.box-medium {
+    grid-column: span 1;
 }
 
-.review-blok:hover {
-  transform: translateY(-5px);
-  border-color: var(--ocean-blue);
+.box-wide {
+    /* Dit blok neemt 2 van de 3 kolommen in beslag */
+    grid-column: span 2; 
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-.review-blok img, .voorbeeld img {
-  width: 50px !important;
-  height: auto !important;
-  vertical-align: middle;
-  margin-right: 15px;
-}
-
-.review-blok h3 {
-  margin-top: 0;
-  display: inline-block;
-}
-
-.review-blok h3 a {
-  color: var(--ocean-blue);
-  text-decoration: none;
-}
-
-/* --- SIDEBAR & MENU --- */
-.menu-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--ocean-blue);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 50px;
-  cursor: pointer;
-  z-index: 1001;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(46, 134, 222, 0.3);
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
-  background: var(--deep-ocean);
-  color: white;
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  padding: 5rem 2rem;
-  z-index: 1000;
-  box-sizing: border-box;
-}
-
-.sidebar.open { transform: translateX(0); }
-
-.sidebar a {
-  color: var(--sponge-yellow);
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-.sidebar a:hover { color: white; }
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 2.5rem;
-  cursor: pointer;
-}
-
-/* --- FOOTER --- */
-.disclaimer, .copyright {
-  font-size: 0.85rem;
-  color: #7f8c8d;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-@media (max-width: 600px) {
-  .keurmerk { transform: none; }
-  .container { padding-top: 5rem; }
+/* Foto vakje binnen het brede blok */
+.foto-placeholder {
+    background: #2a2f3a;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 80px;
+    text-align: center;
 }
