@@ -271,3 +271,139 @@ body {
     border-top: 1px solid var(--border-color);
     margin-top: 40px;
 }
+
+/* ==========================================================================
+   8. HOMEPAGE HERO STYLING (Modern & Minimalistisch)
+   ========================================================================== */
+.hero-container {
+    min-height: calc(80vh - 120px); /* Zorgt dat de content mooi verticaal gecentreerd staat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    /* Een hele subtiele, zachte gloed achter je logo voor extra diepte */
+    background: radial-gradient(circle at center, rgba(244, 196, 48, 0.03) 0%, rgba(15, 17, 21, 0) 70%);
+    
+    /* Vloeiende binnenkomende animatie bij het laden van de pagina */
+    animation: fadeInPage 0.8s ease-out forwards;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+/* Grote logo-wrapper op de homepage */
+.hero-logo-wrapper {
+    margin-bottom: 24px;
+}
+
+.hero-main-logo {
+    width: 140px; /* Mooi groot en indrukwekkend op de homepage */
+    height: auto;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3)); /* Geeft diepte aan je logo */
+    transition: transform 0.3s ease;
+}
+
+/* Subtiel wiebeleffect als je over je hoofdlogo hoovert */
+.hero-main-logo:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: var(--text-main);
+}
+
+/* Maakt de naam 'Zeespons' glanzend geel */
+.highlight-text {
+    color: var(--accent-yellow);
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+/* De knoppensectie */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Algemene knop-stijlen */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+/* De primaire gele knop */
+.btn-primary {
+    background-color: var(--accent-yellow);
+    color: var(--bg-main);
+    border: 1px solid var(--accent-yellow);
+}
+
+.btn-primary:hover {
+    background-color: #e5b525; /* Iets donkerder geel bij hover */
+    border-color: #e5b525;
+    transform: translateY(-2px);
+}
+
+/* De secundaire donkere knop */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+    border-color: var(--text-muted);
+    transform: translateY(-2px);
+}
+
+/* Animatie-effect voor het laden van de pagina */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobiele aanpassingen voor de homepage */
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+
