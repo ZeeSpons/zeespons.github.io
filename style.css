@@ -194,3 +194,80 @@ body {
         text-align: center;
     }
 }
+
+/* ==========================================================================
+   6. LINKS PAGINA STYLING (Compact & Gestructureerd)
+   ========================================================================== */
+.links-container {
+    max-width: 680px; /* Lekker smal en gefocust, net als een professionele linktree */
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.links-category {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-yellow); /* Mooi geel herkenbaar accent uit je logo */
+    margin-bottom: 16px;
+    padding-left: 4px;
+}
+
+/* De container die de link-blokken netjes onder elkaar zet */
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* De compacte link-blokjes zelf */
+.link-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px; /* Iets minder rond dan het bento grid voor een strakke look */
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover effect voor de link-blokjes */
+.link-card:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--accent-yellow);
+    transform: translateX(4px); /* Subtiel effect: schuift een klein beetje naar rechts */
+}
+
+/* De compacte .webp afbeeldingen in het blokje */
+.link-icon {
+    width: 28px;  /* Lekker compact gehouden zoals je vroeg */
+    height: 28px;
+    object-fit: contain;
+    margin-right: 18px;
+    border-radius: 6px;
+}
+
+/* De tekst van de link */
+.link-name {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   7. FOOTER STYLING
+   ========================================================================== */
+.main-footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+}
