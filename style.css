@@ -23,6 +23,18 @@ body {
     letter-spacing: 2px;
 }
 
+.header-logo {
+    height: 40px; /* Zorgt dat het logo strak en compact in de balk past */
+    width: auto;
+    display: block;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+
 /* Het magische Bento Grid */
 .bento-container {
     display: grid;
