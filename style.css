@@ -96,6 +96,88 @@ body {
     font-weight: 600;
 }
 
+/* ==========================================================================
+   3. HET VERBETERDE BENTO GRID (Nu opgedeeld in 5 kolommen)
+   ========================================================================== */
+.bento-container {
+    display: grid;
+    /* We verhogen dit naar 5 kolommen zodat S, M en L allemaal een unieke breedte krijgen */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bento-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 32px;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.bento-box:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--accent-yellow);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. AUTOMATISCHE FORMULA'S VOOR UNIEKE BREEDTES (S=1, M=2, L=3)
+   ========================================================================== */
+
+/* --- DE KLEINE BLOKKEN (S) - Nemen 1 van de 5 kolommen in (Heel compact) --- */
+/* Dit pakt automatisch blok 1, 6 en 8 in de reeks van 9 */
+.bento-container .bento-box:nth-of-type(9n+1),
+.bento-container .bento-box:nth-of-type(9n+6),
+.bento-container .bento-box:nth-of-type(9n+8) {
+    grid-column: span 1;
+}
+
+/* --- DE MIDDELGROTE BLOKKEN (M) - Nemen 2 van de 5 kolommen in (Middelgroot) --- */
+/* Dit pakt automatisch blok 3, 4 en 9 in de reeks van 9 */
+.bento-container .bento-box:nth-of-type(9n+3),
+.bento-container .bento-box:nth-of-type(9n+4),
+.bento-container .bento-box:nth-of-type(9n+9) {
+    grid-column: span 2;
+}
+
+/* --- DE GROTE BLOKKEN (L) - Nemen 3 van de 5 kolommen in (Lekker breed) --- */
+/* Dit pakt automatisch blok 2, 5 en 7 in de reeks van 9 */
+.bento-container .bento-box:nth-of-type(9n+2),
+.bento-container .bento-box:nth-of-type(9n+5),
+.bento-container .bento-box:nth-of-type(9n+7) {
+    grid-column: span 3;
+}
+
+/* Extra styling-hulpje voor brede blokken met een foto + tekst naast elkaar */
+.box-content-split {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.foto-placeholder {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    min-width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.bento-box p {
+    color: var(--text-muted);
+}
 
 /* ==========================================================================
    5. RESPONSIVENESS (Zorgt dat het grid perfect werkt op mobiel)
