@@ -1,1 +1,85 @@
-kun je de blokken van de grid meer maken als de tekening? met vaste spacing die herhaald. dus linksboven klein, midden boven groot, rechts boven medium.midden links M, midden midden L, midden rechts S.onder links L, onder midden S, onder rechts M. en dat herhalend als ik meer blokken toevoeg. zorg ook dat het zeespons logo en naam in de balk naar de startpagina verwijzen.dit is de huidige html, pas het aan.<!DOCTYPE html><html lang="nl"><head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Zeespons.com - Grid</title> <link rel="icon" type="image/png" href="media/favicon.png" /> <link rel="stylesheet" href="style.css" /> <!-- Jouw Open Graph tags (opgeschoond & geoptimaliseerd) --> <meta property="og:title" content="Zeespons.comTM"> <meta property="og:description" content="Welkom op zeespons.com"> <meta property="og:image" content="https://www.zeespons.com/media/og.png"> <meta property="og:url" content="https://www.zeespons.com"> <meta property="og:type" content="website"> <meta name="twitter:card" content="summary_large_image"></head><body> <!-- De Header uit jouw nieuwe schets, met gebruik van je logo --> <header class="main-header"> <div class="logo-container"> <!-- Hier laad je jouw zwaaiende spons logo in (bijvoorbeeld als logo.png) --> <img src="assets/logo.webp" alt="Zeespons Logo" class="header-logo" /> </div> <div class="site-title">ZEESPONS.com</div> <nav class="nav-menu"> <a href="index.html">Home</a> <a href="grid.html" class="active">Grid</a> <a href="links.html">Links</a> </nav> </header> <!-- Het Bento Grid uit jouw schets --> <main class="bento-container"> <div class="bento-box box-small-text">TEXT</div> <div class="bento-box box-wide"> <div class="foto-placeholder">Foto</div> <p>VAK MET TEXT</p> </div> <div class="bento-box box-medium"> <div class="icon">📱</div> <p>Korte tekst of feed...</p> </div> <div class="bento-box box-medium"> <div class="icon">📝</div> <p>Lopend tekstblok dat langer doorloopt...</p> </div> <div class="bento-box box-wide"> <p>Ander breed wisselend tekstblok...</p> </div> <div class="bento-box box-small">Blokje</div> </main></body></html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeespons.com - Grid</title>
+  <link rel="icon" type="image/png" href="media/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Jouw Open Graph tags (opgeschoond & geoptimaliseerd) -->
+  <meta property="og:title" content="Zeespons.com™">
+  <meta property="og:description" content="Welkom op zeespons.com">
+  <meta property="og:image" content="https://www.zeespons.com/media/og.png">
+  <meta property="og:url" content="https://www.zeespons.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+  <!-- De Header met klikbaar logo en titel naar de homepagina -->
+  <header class="main-header">
+    <a href="index.html" class="header-brand">
+      <div class="logo-container">
+        <img src="assets/logo.webp" alt="Zeespons Logo" class="header-logo" />
+      </div>
+      <div class="site-title">ZEESPONS.com</div>
+    </a>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="grid.html" class="active">Grid</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </header>
+
+  <!-- Het Slimme Automatisch Herhalende Bento Grid -->
+  <main class="bento-container">
+    
+    <!-- Rij 1: S | L | M -->
+    <div class="bento-box">
+      <p>Blok 1 (S)</p>
+    </div>
+    
+    <div class="bento-box box-content-split">
+      <div class="foto-placeholder">Foto</div>
+      <p>Blok 2 (L) - Vak met tekst en een afbeelding</p>
+    </div>
+    
+    <div class="bento-box">
+      <div class="icon">📱</div>
+      <p>Blok 3 (M) - Korte tekst of feed...</p>
+    </div>
+    
+    <!-- Rij 2: M | L | S -->
+    <div class="bento-box">
+      <div class="icon">📝</div>
+      <p>Blok 4 (M) - Lopend tekstblok dat langer doorloopt...</p>
+    </div>
+    
+    <div class="bento-box">
+      <p>Blok 5 (L) - Ander breed wisselend tekstblok...</p>
+    </div>
+    
+    <div class="bento-box">
+      <p>Blok 6 (S)</p>
+    </div>
+
+    <!-- Rij 3: L | S | M -->
+    <div class="bento-box">
+      <p>Blok 7 (L) - Dit patroon blijft herhalen!</p>
+    </div>
+
+    <div class="bento-box">
+      <p>Blok 8 (S)</p>
+    </div>
+
+    <div class="bento-box">
+      <p>Blok 9 (M)</p>
+    </div>
+
+    <!-- Voeg hieronder simpelweg extra <div class="bento-box"> toe om de lijst uit te breiden -->
+
+  </main>
+
+</body>
+</html>
