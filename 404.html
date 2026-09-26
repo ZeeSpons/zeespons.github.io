@@ -7,29 +7,76 @@
   <link rel="icon" type="image/png" href="media/favicon.png" />
   
   <style>
-    :root{--bg:#0b1220;--card:#0f1a2b;--accent:#ffb703;--muted:#9fb3c8}
+    /* Kleuren aangepast zodat ze matchen met de rest van Zeespons.com */
+    :root {
+      --bg: #0f1115;
+      --card: #181b22;
+      --accent: #f4c430; /* Het exact zelfde geel uit je logo */
+      --muted: #94a3b8;
+      --border-color: #262b36;
+    }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
-    body{background:linear-gradient(180deg,#042033 0%, #071425 60%);color:#e6f0f6;display:flex;align-items:center;justify-content:center;padding:32px}
+    
+    /* Vloeiend donker verloop passend bij de nieuwe dark mode */
+    body {
+      background: linear-gradient(180deg, #13161c 0%, var(--bg) 100%);
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      overflow: hidden; /* Voorkomt scrollbalken door de geanimeerde bubbels */
+    }
+    
     .wrap{max-width:980px;width:100%;display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);padding:28px;border-radius:16px;box-shadow:0 8px 40px rgba(2,6,23,0.6)}
-    h1{font-size:72px;margin:0 0 8px;line-height:0.85;color:var(--accent);text-shadow:0 6px 30px rgba(0,0,0,0.6)}
-    h2{margin:0;color:#e9f7ff;font-weight:600}
-    p{color:var(--muted);margin:12px 0 20px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:linear-gradient(180deg,#0f2a3a,#06202a);color:#e8f7ff;border:1px solid rgba(255,255,255,0.05);text-decoration:none;font-weight:600}
+    
+    /* Gestyled in de stijl van je bento-boxen */
+    .card {
+      background-color: var(--card);
+      border: 1px solid var(--border-color);
+      padding: 36px;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    
+    h1{font-size:72px;margin:0 0 8px;line-height:0.85;color:var(--accent);text-shadow:0 6px 30px rgba(0,0,0,0.3)}
+    h2{margin:0;color:#f1f5f9;font-weight:600;line-height:1.3}
+    p{color:var(--muted);margin:16px 0 24px;line-height:1.6}
+    
+    /* Knop aangepast naar de strakke primaire knopstijl */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      background-color: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    
+    .btn:hover {
+      background-color: #e5b525;
+      transform: translateY(-2px);
+    }
+    
     .sponge{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-    .sponge img{width:100%;max-width:360px;border-radius:16px}
-    footer{margin-top:18px;font-size:13px;color:#7ea6bd}
-    @media (max-width:900px){.wrap{grid-template-columns:1fr;gap:18px}.sponge{order:-1}}
+    .sponge img{width:100%;max-width:360px;border-radius:20px;box-shadow: 0 8px 30px rgba(0,0,0,0.5)}
+    footer{margin-top:24px;font-size:13px;color:var(--text-muted);border-top:1px solid var(--border-color);padding-top:16px}
+    @media (max-width:900px){.wrap{grid-template-columns:1fr;gap:24px}.sponge{order:-1}}
 
     .bubbles{position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none;overflow:hidden}
-    .bubble{position:absolute;border-radius:999px;opacity:.06;filter:blur(6px)}
+    .bubble{position:absolute;border-radius:999px;opacity:.04;filter:blur(4px)}
   </style>
 </head>
 <body>
+  <!-- De sfeervolle bubbels -->
   <div class="bubbles" aria-hidden="true">
     <span class="bubble" style="width:260px;height:260px;left:5%;top:10%;background:linear-gradient(180deg,#73e6d8,#2bb7b1)"></span>
-    <span class="bubble" style="width:140px;height:140px;left:80%;top:5%;background:linear-gradient(180deg,#ffd166,#ff9f1c)"></span>
+    <span class="bubble" style="width:140px;height:140px;left:80%;top:5%;background:linear-gradient(180deg,#f4c430,#ff9f1c)"></span>
     <span class="bubble" style="width:200px;height:200px;left:60%;top:60%;background:linear-gradient(180deg,#90e0ef,#00b4d8)"></span>
   </div>
 
@@ -39,7 +86,8 @@
       <h2>Hé, deze pagina is weggezakt in het zeeschuim.</h2>
       <p>Misschien heb je een oude link gebruikt, of is er een klein monster (van type '404') die de pagina heeft opgeborgen in z'n schelp. Geen paniek — hier is een reddingsboei:</p>
 
-      <a class="btn" href="/">🏠 Terug naar de start</a>
+      <!-- De veilige GitHub Pages link -->
+      <a class="btn" href="index.html">🏠 Terug naar de start</a>
 
       <footer>Pagina niet gevonden — maar de spons blijft vrolijk dobberen 🌊🧽</footer>
     </section>
@@ -58,8 +106,6 @@
         {transform: 'translateY(-60vh) scale(1.3)', opacity: 0}
       ],{duration:dur,iterations:Infinity,delay: i*4000});
     });
-
-
   </script>
 </body>
 </html>
