@@ -27,7 +27,7 @@ body {
 }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATIE (Uit jouw schets)
+   2. HEADER & NAVIGATIE (Nu met klikbare link-combinatie)
    ========================================================================== */
 .main-header {
     display: flex;
@@ -40,13 +40,27 @@ body {
     margin-bottom: 32px;
 }
 
+/* Voegt het logo en de titel samen tot één strakke, klikbare knop */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.header-brand:hover {
+    opacity: 0.85; /* Subtiel effect bij het eroverheen bewegen */
+}
+
 .logo-container {
     display: flex;
     align-items: center;
 }
 
 .header-logo {
-    height: 42px; /* Perfecte compacte grootte voor in de balk */
+    height: 42px;
     width: auto;
     display: block;
 }
@@ -55,7 +69,6 @@ body {
     font-weight: 800;
     font-size: 1.2rem;
     letter-spacing: 2px;
-    color: var(--text-main);
 }
 
 .nav-menu {
@@ -73,12 +86,10 @@ body {
     border-radius: 8px;
 }
 
-/* Hover-effect voor de menulinks */
 .nav-menu a:hover {
     color: var(--accent-yellow);
 }
 
-/* Styling voor de actieve pagina (Grid) */
 .nav-menu a.active {
     color: var(--bg-main);
     background-color: var(--accent-yellow);
@@ -86,27 +97,26 @@ body {
 }
 
 /* ==========================================================================
-   3. HET BENTO GRID (De asymmetrische blokkenstructuur)
+   3. HET BRUUT HERHALENDE BENTO GRID (S-L-M | M-L-S | L-S-M)
    ========================================================================== */
 .bento-container {
     display: grid;
-    /* Verdeelt de layout in exact 3 gelijke onzichtbare kolommen */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px; /* De witruimte tussen je blokken */
+    /* We gebruiken een geavanceerd grid met 4 gelijke onzichtbare kolommen 
+       zodat we S (1 kolom), M (1 kolom) en L (2 kolommen) perfect kunnen mixen */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 24px;
     max-width: 1200px;
-    margin: 0 auto; /* Centreert het grid netjes op grote schermen */
+    margin: 0 auto;
 }
 
-/* Algemene styling voor elk afzonderlijk blok */
 .bento-box {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 20px; /* Mooie, modern afgeronde hoeken uit je schets */
+    border-radius: 20px;
     padding: 32px;
     transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Subtiel premium effect als je met de muis over een blok beweegt */
 .bento-box:hover {
     background-color: var(--bg-card-hover);
     border-color: var(--accent-yellow);
@@ -114,23 +124,35 @@ body {
 }
 
 /* ==========================================================================
-   4. BREEDTES EN FUNCTIONALITEIT VAN DE SPECIFIEKE BLOKKEN
+   4. AUTOMATISCHE FORMULA'S VOOR HET MATHEMATISCH HERHALEN (Per 9 blokken)
    ========================================================================== */
 
-/* Kleine blokken (nemen 1 van de 3 kolommen in) */
-.box-small, .box-small-text, .box-medium {
+/* --- DE GROTE BLOKKEN (L) - Nemen 2 kolommen in beslag --- */
+/* Dit pakt automatisch blok nummer 2, 5 en 7 in de reeks van 9 */
+.bento-container .bento-box:nth-of-type(9n+2),
+.bento-container .bento-box:nth-of-type(9n+5),
+.bento-container .bento-box:nth-of-type(9n+7) {
+    grid-column: span 2;
+}
+
+/* --- DE MIDDELGROTE & KLEINE BLOKKEN (M & S) - Nemen 1 kolom in beslag --- */
+/* Dit pakt automatisch alle overige blokken (1, 3, 4, 6, 8, 9) */
+.bento-container .bento-box:nth-of-type(9n+1),
+.bento-container .bento-box:nth-of-type(9n+3),
+.bento-container .bento-box:nth-of-type(9n+4),
+.bento-container .bento-box:nth-of-type(9n+6),
+.bento-container .bento-box:nth-of-type(9n+8),
+.bento-container .bento-box:nth-of-type(9n+9) {
     grid-column: span 1;
 }
 
-/* Brede blokken uit je schets (nemen 2 van de 3 kolommen in) */
-.box-wide {
-    grid-column: span 2;
+/* Extra styling-hulpje voor brede blokken met een foto + tekst naast elkaar */
+.box-content-split {
     display: flex;
     align-items: center;
     gap: 24px;
 }
 
-/* De foto-placeholder binnen het brede blok */
 .foto-placeholder {
     background-color: var(--bg-main);
     border: 1px solid var(--border-color);
@@ -142,10 +164,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 0.9rem;
-    font-weight: 500;
 }
 
-/* Styling voor de emoticons/iconen bovenin de blokjes */
 .icon {
     font-size: 1.8rem;
     margin-bottom: 12px;
@@ -153,7 +173,6 @@ body {
 
 .bento-box p {
     color: var(--text-muted);
-    font-size: 1rem;
 }
 
 /* ==========================================================================
