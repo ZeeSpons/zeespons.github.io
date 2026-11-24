@@ -126,20 +126,20 @@ body {
    ========================================================================== */
 
 /* --- KLEIN (S) - 1 van de 4 kolommen (Blok 1, 6, 7, 12...) --- */
-.bento-container .bento-box:nth-of-type(6n+1),
-.bento-container .bento-box:nth-of-type(6n+6) {
+.bento-container > :nth-child(6n+1),
+.bento-container > :nth-child(6n+6) {
     grid-column: span 1;
 }
 
 /* --- MIDDEL (M) - 2 van de 4 kolommen (Blok 3, 4, 9, 10...) --- */
-.bento-container .bento-box:nth-of-type(6n+3),
-.bento-container .bento-box:nth-of-type(6n+4) {
+.bento-container > :nth-child(6n+3),
+.bento-container > :nth-child(6n+4) {
     grid-column: span 2;
 }
 
 /* --- GROOT (L) - 3 van de 4 kolommen (Blok 2, 5, 8, 11...) --- */
-.bento-container .bento-box:nth-of-type(6n+2),
-.bento-container .bento-box:nth-of-type(6n+5) {
+.bento-container > :nth-child(6n+2),
+.bento-container > :nth-child(6n+5) {
     grid-column: span 3;
 }
 
