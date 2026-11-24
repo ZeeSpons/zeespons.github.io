@@ -97,12 +97,11 @@ body {
 }
 
 /* ==========================================================================
-   3. HET VERBETERDE BENTO GRID (Nu opgedeeld in 5 kolommen)
+   3. HET VERBETERDE BENTO GRID (4 kolommen voor perfecte combinaties)
    ========================================================================== */
 .bento-container {
     display: grid;
-    /* We verhogen dit naar 5 kolommen zodat S, M en L allemaal een unieke breedte krijgen */
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(4, 1fr); 
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
@@ -123,60 +122,25 @@ body {
 }
 
 /* ==========================================================================
-   4. AUTOMATISCHE FORMULA'S VOOR UNIEKE BREEDTES (S=1, M=2, L=3)
+   4. AUTOMATISCHE FORMULES (Herhaalt elke 6 blokken: S+L, M+M, L+S)
    ========================================================================== */
 
-/* --- DE KLEINE BLOKKEN (S) - Nemen 1 van de 5 kolommen in (Heel compact) --- */
-/* Dit pakt automatisch blok 1, 6 en 8 in de reeks van 9 */
-.bento-container .bento-box:nth-of-type(9n+1),
-.bento-container .bento-box:nth-of-type(9n+6),
-.bento-container .bento-box:nth-of-type(9n+8) {
+/* --- KLEIN (S) - 1 van de 4 kolommen (Blok 1, 6, 7, 12...) --- */
+.bento-container .bento-box:nth-of-type(6n+1),
+.bento-container .bento-box:nth-of-type(6n+6) {
     grid-column: span 1;
 }
 
-/* --- DE MIDDELGROTE BLOKKEN (M) - Nemen 2 van de 5 kolommen in (Middelgroot) --- */
-/* Dit pakt automatisch blok 3, 4 en 9 in de reeks van 9 */
-.bento-container .bento-box:nth-of-type(9n+3),
-.bento-container .bento-box:nth-of-type(9n+4),
-.bento-container .bento-box:nth-of-type(9n+9) {
+/* --- MIDDEL (M) - 2 van de 4 kolommen (Blok 3, 4, 9, 10...) --- */
+.bento-container .bento-box:nth-of-type(6n+3),
+.bento-container .bento-box:nth-of-type(6n+4) {
     grid-column: span 2;
 }
 
-/* --- DE GROTE BLOKKEN (L) - Nemen 3 van de 5 kolommen in (Lekker breed) --- */
-/* Dit pakt automatisch blok 2, 5 en 7 in de reeks van 9 */
-.bento-container .bento-box:nth-of-type(9n+2),
-.bento-container .bento-box:nth-of-type(9n+5),
-.bento-container .bento-box:nth-of-type(9n+7) {
+/* --- GROOT (L) - 3 van de 4 kolommen (Blok 2, 5, 8, 11...) --- */
+.bento-container .bento-box:nth-of-type(6n+2),
+.bento-container .bento-box:nth-of-type(6n+5) {
     grid-column: span 3;
-}
-
-/* Extra styling-hulpje voor brede blokken met een foto + tekst naast elkaar */
-.box-content-split {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.foto-placeholder {
-    background-color: var(--bg-main);
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
-    min-width: 120px;
-    height: 120px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-}
-
-.icon {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-}
-
-.bento-box p {
-    color: var(--text-muted);
 }
 
 /* ==========================================================================
