@@ -177,58 +177,8 @@ body {
 }
 
 /* ==========================================================================
-   DUIDELIJKE LINKS BINNEN BENTO-BLOKKEN
+   KLIKBARE BENTO-BLOKKEN & LINKS
    ========================================================================== */
-.grid-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent-yellow);
-    font-weight: 700;
-    font-size: 1.05rem;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(244, 196, 48, 0.35);
-    padding-bottom: 2px;
-    margin-bottom: 8px;
-    transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
-}
-
-.grid-link:hover {
-    color: #ffd859;
-    border-color: var(--accent-yellow);
-    gap: 11px;
-}
-
-.grid-link-arrow {
-    font-size: 0.95rem;
-    transition: transform 0.2s ease;
-}
-
-.grid-link:hover .grid-link-arrow {
-    transform: translate(2px, -2px);
-}
-
-/* Optioneel: klikbare kaart-stijl als je een heel blok als link wilt gebruiken */
-a.bento-box-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-@media (max-width: 900px) {
-    .box-content-split {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .grid-photo,
-    .foto-placeholder {
-        width: 100%;
-        min-width: 0;
-        height: 160px;
-    }
-}
-/* Klikbaar bento-blok als volledige link */
 a.bento-box.bento-box-link {
     display: block;
     text-decoration: none;
@@ -265,6 +215,35 @@ a.bento-box.bento-box-link:hover .bento-link-arrow {
     transform: translate(3px, -3px);
 }
 
+.grid-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-yellow);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244, 196, 48, 0.35);
+    padding-bottom: 2px;
+    margin-bottom: 8px;
+    transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+}
+
+.grid-link:hover {
+    color: #ffd859;
+    border-color: var(--accent-yellow);
+    gap: 11px;
+}
+
+.grid-link-arrow {
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+.grid-link:hover .grid-link-arrow {
+    transform: translate(2px, -2px);
+}
+
 /* ==========================================================================
    5. RESPONSIVENESS (Zorgt dat het grid perfect werkt op mobiel)
    ========================================================================== */
@@ -273,29 +252,27 @@ a.bento-box.bento-box-link:hover .bento-link-arrow {
         padding: 16px;
     }
 
-    /* Schakelt de 3 kolommen uit en zet alles netjes onder elkaar */
     .bento-container {
         grid-template-columns: 1fr;
         gap: 16px;
     }
 
-    /* Reset alle brede blokken zodat ze op mobiel gewoon de volle breedte pakken */
-    .box-wide, .box-small, .box-small-text, .box-medium {
+    .bento-container .bento-box {
         grid-column: span 1;
     }
 
-    /* Past het brede blok aan zodat de foto op mobiel bóven de tekst staat */
-    .box-wide {
+    .box-content-split {
         flex-direction: column;
         align-items: flex-start;
     }
 
+    .grid-photo,
     .foto-placeholder {
         width: 100%;
-        height: 140px;
+        min-width: 0;
+        height: 160px;
     }
 
-    /* Verandert de header-indeling op kleine schermen */
     .main-header {
         flex-direction: column;
         gap: 16px;
@@ -514,5 +491,3 @@ a.bento-box.bento-box-link:hover .bento-link-arrow {
         width: 100%;
     }
 }
-
-
