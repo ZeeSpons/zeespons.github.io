@@ -27,4 +27,14 @@
        <lastmod>2026-11-24T23:38:21+00:00</lastmod>
        <priority>0.6400</priority>
   </url>
+  <url>
+       <loc>https://www.zeespons.com/privacy-policy.html</loc>
+       <lastmod>2026-11-25T00:00:00+00:00</lastmod>
+       <priority>0.5000</priority>
+  </url>
+  <url>
+       <loc>https://www.zeespons.com/terms-of-service.html</loc>
+       <lastmod>2026-11-25T00:00:00+00:00</lastmod>
+       <priority>0.5000</priority>
+  </url>
 </urlset>
