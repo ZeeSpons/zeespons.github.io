@@ -9,7 +9,7 @@ De centrale hub voor digitale projecten, contentcreatie, links en handleidingen 
 * **Links (`links.html`)**: Overzicht van kanalen (zoals Twitch, YouTube, Instagram, Discord, TikTok en Spotify) en gerelateerde projecten (zoals *Boeitmijnul.nl* en *Yappelkaas.nl*).
 * **Juridische pagina's (`privacy-policy.html` & `terms-of-service.html`)**: Privacyverklaring en algemene voorwaarden, bereikbaar vanuit de footer op de site.
 * **Foutpagina (`404.html`)**: Aangepaste 404-pagina in donkere stijl met gele accenten en een knop terug naar de startpagina.
-* **Bestanden en SEO (`files/...`, `sitemap.xml`, `robots.txt`, `CNAME`)**: Bevat onder meer de XML-sitemap, crawlregels voor zoekmachines en het aangepaste domein `[www.zeespons.com](https://www.zeespons.com)`.
+* **Bestanden en SEO (`files/...`, `sitemap.xml`, `robots.txt`, `CNAME`)**: Bevat onder meer de XML-sitemap, crawlregels voor zoekmachines en het aangepaste domein [www.zeespons.com](https://www.zeespons.com) .
 
 ## Projectstructuur
 
@@ -55,4 +55,4 @@ zeespons.github.io/
 ## Copyright en licentie
 
 © 2026 Zeespons. Alle rechten voorbehouden. Eigen teksten, ontwerpen en het Zeespons-logo zijn eigendom van Zeespons, tenzij anders vermeld.
-~~~[cite: 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 48]
+
